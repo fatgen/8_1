@@ -1,10 +1,14 @@
 <?php
 
+$places = $_POST["pref"];
 
-var_dump($POST["pref"]);
+echo $places;
 
-$code = 13;
-var_dump($places[$code]);
+
+// var_dump($POST["pref"]);
+
+// $code = 13;
+// var_dump($places[$code]);
 
 
 // 都道府県コード => 都道府県名
@@ -158,6 +162,13 @@ $places = array(
       </div>
     </div>
   </div>
+
+  <?php foreach ($places[$code] as $place): ?>
+     <option value="<?php echo $code; ?>"><?php echo $places ;?></option>
+    観光スポット１件分の HTML をここに書く
+    …
+    ...
+<?php endforeach ?>
   <hr>
   <footer>&copy; 観光スポット検索協会 </footer>
 </body>
