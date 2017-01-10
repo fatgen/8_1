@@ -132,7 +132,7 @@ $places = array(
 <body>
   <h1>関東地方の観光スポット検索</h1>
   <div class="container">
-    <form class="form-inline" action="http://192.168.33.10/kadai_serch/result.php" method="post">
+    <form class="form-inline" action="http://192.168.33.10/%E6%A4%9C%E7%B4%A2%E3%83%9A%E3%83%BC%E3%82%B8%E4%BD%9C%E6%88%90/result.php" method="post">
       <div class="form-group">
         <select name="pref" class="form-control">
           <?php foreach ($prefectures as $code => $prefecture): ?>

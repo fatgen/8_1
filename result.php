@@ -5,10 +5,9 @@ $places = $_POST["pref"];
 echo $places;
 
 
-// var_dump($POST["pref"]);
+var_dump($POST["pref"]);
 
-// $code = 13;
-// var_dump($places[$code]);
+
 
 
 // 都道府県コード => 都道府県名
@@ -54,6 +53,8 @@ $places = array(
       'image'  => 'place_5.jpg',
     ),
   ),
+
+
 
   // 東京都の観光スポット
   13 => array(
@@ -103,6 +104,10 @@ $places = array(
   ),
 );
 
+
+// $code = 13;
+// var_dump($places[$code]);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -141,10 +146,12 @@ $places = array(
 <body>
   <h1>関東地方の観光スポット検索</h1>
   <div class="container">
-    <form class="form-inline" action="" method="post">
+    <form class="form-inline" action="http://192.168.33.10/%E6%A4%9C%E7%B4%A2%E3%83%9A%E3%83%BC%E3%82%B8%E4%BD%9C%E6%88%90/result.php" method="post">
       <div class="form-group">
-        <select name="pref" class="form-control">
-          <option value="">選択してください</option>
+      <select name="pref" class="form-control">
+          <?php foreach ($prefectures as $code => $prefecture): ?>
+            <option value="<?php echo $code; ?>"><?php echo $prefecture;?></option>
+          <?php endforeach ?>
         </select>
       </div>
       <button class="btn btn-primary btn-sm"> 検 索 </button>
@@ -163,12 +170,20 @@ $places = array(
     </div>
   </div>
 
-  <?php foreach ($places[$code] as $place): ?>
-     <option value="<?php echo $code; ?>"><?php echo $places ;?></option>
-    観光スポット１件分の HTML をここに書く
-    …
-    ...
-<?php endforeach ?>
+      <?php foreach ($places[$code] as $place)
+        foreach ($places[$code] as $place)
+          foreach ($places[$code] as $place): ?>
+
+
+      <br>---------------------<br>
+     <?php
+      var_dump($place);
+      ?>
+      <br>---------------------<br>
+      <?php
+      echo $places;
+      ?>
+      <?php endforeach ?>
   <hr>
   <footer>&copy; 観光スポット検索協会 </footer>
 </body>
